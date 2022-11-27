@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import UserStats from './UserStats';
+import user from 'path/user.json';
 import css from './Profile.module.css';
 
 /* <Profile
@@ -25,14 +25,25 @@ export default function Profile({
 }) {
   return (
     <div className={css.profile}>
-      <div className="description">
+      <div className={css.description}>
         <img src={avatar} alt={username} className={css.avatar} />
-        <h1 className="name">{username}</h1>
+        <p className="name">{username}</p>
         <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
       </div>
-      <ul className="stats">
-        <UserStats />
+      <ul className={css.stats}>
+        <li>
+          <span className={css.label}>Followers</span>
+          <span className="quantity">{user.stats.followers}</span>
+        </li>
+        <li>
+          <span className={css.label}>Views</span>
+          <span className="quantity">{user.stats.views}</span>
+        </li>
+        <li>
+          <span className={css.label}>Likes</span>
+          <span className="quantity">{user.stats.likes}</span>
+        </li>
       </ul>
     </div>
   );

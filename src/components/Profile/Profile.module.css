@@ -8,7 +8,7 @@
 }
 
 .description {
-  padding: 25px 25px 0 25px;
+  padding: 25px 50px 0 50px;
 }
 
 .description > p {
@@ -24,21 +24,45 @@
   margin-right: auto;
 }
 
+.name {
+  font-weight: 700;
+  font-size: x-large;
+  line-height: 1.6;
+}
+
+.location {
+  margin-bottom: 32px;
+}
+
 .stats {
   display: flex;
 }
 
 .stats > li {
   display: flex;
-
   flex-direction: column;
   align-items: center;
   gap: 4px;
-
+  border: 1px solid whitesmoke;
   flex: 1;
-  border: 1px solid #ccc;
+  border-bottom: none;
+
+  background-color: lightgray;
+}
+.stats > li:last-child {
+  border-right: none;
+  border-bottom-right-radius: 14px;
+}
+
+.stats > li:first-child {
+  border-left: none;
+  border-bottom-left-radius: 14px;
 }
 
 .label {
+  font-size: 13px;
+}
+
+.quantity {
   font-weight: 700;
 }

@@ -1,5 +1,5 @@
 .profile {
-  background-color: gray;
+  background-color: darkolivegreen;
   border: 2px solid black;
   margin: 0 auto;
   display: block;
@@ -29,6 +29,7 @@
   font-weight: 700;
   font-size: x-large;
   line-height: 1.6;
+  color: hsl(48deg 100% 65%);
 }
 
 .tag,

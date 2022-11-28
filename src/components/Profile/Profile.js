@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import user from 'path/user.json';
+// import user from 'path/user.json';
 import css from './Profile.module.css';
 
 /* <Profile
@@ -22,6 +22,7 @@ export default function Profile({
   username,
   tag,
   location,
+  stats,
 }) {
   return (
     <div className={css.profile}>
@@ -34,15 +35,15 @@ export default function Profile({
       <ul className={css.stats}>
         <li>
           <span className={css.label}>Followers</span>
-          <span className="quantity">{user.stats.followers}</span>
+          <span className="quantity">{stats.followers}</span>
         </li>
         <li>
           <span className={css.label}>Views</span>
-          <span className="quantity">{user.stats.views}</span>
+          <span className="quantity">{stats.views}</span>
         </li>
         <li>
           <span className={css.label}>Likes</span>
-          <span className="quantity">{user.stats.likes}</span>
+          <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -54,4 +55,9 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  stats: PropTypes.exact({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };

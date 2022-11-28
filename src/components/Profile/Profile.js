@@ -1,21 +1,5 @@
 import PropTypes from 'prop-types';
-// import user from 'path/user.json';
 import css from './Profile.module.css';
-
-/* <Profile
-/>; */
-
-// {
-//   "username": "Jacques Gluke",
-//   "tag": "jgluke",
-//   "location": "Ocho Rios, Jamaica",
-//   "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
-//   "stats": {
-//     "followers": 5603,
-//     "views": 4827,
-//     "likes": 1308
-//   }
-// }
 
 export default function Profile({
   avatar = `https://cdn-icons-png.flaticon.com/512/1077/1077012.png`,
@@ -29,7 +13,7 @@ export default function Profile({
       <div className={css.description}>
         <img src={avatar} alt={username} className={css.avatar} />
         <p className={css.name}>{username}</p>
-        <p className="tag">@{tag}</p>
+        <p className={css.tag}>@{tag}</p>
         <p className={css.location}>{location}</p>
       </div>
       <ul className={css.stats}>
@@ -56,8 +40,8 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   stats: PropTypes.exact({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
-  }),
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
 };

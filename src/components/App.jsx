@@ -1,4 +1,5 @@
 import user from 'path/user.json';
+import data from 'path/data.json';
 
 import FriendList from './FriendList/FriendList';
 import Profile from './Profile/Profile';
@@ -15,8 +16,19 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
+
+      <Statistics
+        title="Upload stats"
+        label={data[0].label}
+        percentage={data[0].percentage}
+      />
+      <Statistics
+        title="Upload stats"
+        label={data[1].label}
+        percentage={data[1].percentage}
+      />
+
       <FriendList />
-      <Statistics />
       <TransactionHistory />
     </div>
   );

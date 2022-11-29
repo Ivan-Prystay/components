@@ -1,4 +1,4 @@
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 //import data from 'path/data.json';
 
@@ -12,13 +12,13 @@ import css from './Statistics.module.css';
 ]
 */
 
-export default function Statistics({ title, label, percentage }) {
+export default function Statistics({ key, title, label, percentage }) {
   return (
     <section className={css.statistics}>
       <h2 className={css.title}>{title}</h2>
-
       <ul className="stat-list">
         <li className="item">
+          {key}
           <span className="label">{label}</span>
           <span className="percentage">{percentage}%</span>
         </li>
@@ -26,3 +26,12 @@ export default function Statistics({ title, label, percentage }) {
     </section>
   );
 }
+
+Statistics.propTypes = {
+  key: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  statistics: PropTypes.exact({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
+};

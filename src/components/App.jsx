@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
 import user from 'path/user.json';
 import data from 'path/data.json';
 
-import FriendList from './FriendList/FriendList';
+//import FriendList from './FriendList/FriendList';
 import Profile from './Profile/Profile';
-import Statistics from './Statistics/Statistics';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
+import { Statistics } from './Statistics/Statistics';
+import { StatItem } from './Statistics/StatItem/StatItem';
+//import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
@@ -19,17 +19,17 @@ export const App = () => {
       />
 
       <Statistics title="Upload stats">
-        {data.map(el => (
-          <>
-            key={el.id}
-            label={el.label}
-            percentage={el.percentage}
-          </>
+        {data.map(item => (
+          <StatItem
+            key={item.id}
+            label={item.label}
+            percentage={item.percentage}
+          />
         ))}
       </Statistics>
 
-      <FriendList />
-      <TransactionHistory />
+      {/* <FriendList />
+      <TransactionHistory /> */}
     </div>
   );
 };

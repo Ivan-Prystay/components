@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import css from './StatItem.module.css';
 
 export function StatItem({ label, percentage }) {

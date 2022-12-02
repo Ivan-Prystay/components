@@ -5,8 +5,13 @@ export function FriendListItem({ name, avatar, status }) {
   return (
     <li className={css.item}>
       <span className={css.status}>{status}</span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
+      <img
+        className={css.avatar}
+        src={avatar}
+        alt={`Avatar ${name}`}
+        width="48"
+      />
+      <p className={css.name}>{name}</p>
     </li>
   );
 }

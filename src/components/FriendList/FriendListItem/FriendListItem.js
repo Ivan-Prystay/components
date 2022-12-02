@@ -4,7 +4,9 @@ import css from './FriendListItem.module.css';
 export function FriendListItem({ name, avatar, status }) {
   return (
     <li className={css.item}>
-      <span className={css.status}>{status}</span>
+      <span className={`${css.status} ${status && css.isOnline}`}>
+        {status}
+      </span>
       <img
         className={css.avatar}
         src={avatar}

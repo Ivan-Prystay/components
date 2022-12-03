@@ -1,0 +1,9 @@
+.transactionHistory {
+  border: 1px solid lightgray;
+  margin: 25px auto 0;
+}
+.transactionHistory > thead {
+  background-color: #00bcd5;
+  color: white;
+  text-transform: uppercase;
+}

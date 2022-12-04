@@ -26,7 +26,6 @@ export function TransactionHistory({ items = [] }) {
 }
 
 TransactionHistory.propTypes = {
-  items: PropTypes.array.isRequired,
   amount: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,

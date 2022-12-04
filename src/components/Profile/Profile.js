@@ -8,6 +8,7 @@ export function Profile({
   location,
   stats,
 }) {
+  const { followers, views, likes } = stats;
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -19,15 +20,15 @@ export function Profile({
       <ul className={css.stats}>
         <li>
           <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
         <li>
           <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
+          <span className={css.quantity}>{views}</span>
         </li>
         <li>
           <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
@@ -35,9 +36,9 @@ export function Profile({
 }
 
 Profile.propTypes = {
-  avatar: PropTypes.string,
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   stats: PropTypes.exact({
     followers: PropTypes.number.isRequired,

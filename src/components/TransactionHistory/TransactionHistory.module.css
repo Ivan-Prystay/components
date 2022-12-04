@@ -1,9 +1,29 @@
 .transactionHistory {
-  border: 1px solid lightgray;
-  margin: 25px auto 0;
+  margin: 25px auto;
+  font-size: 12px;
+  border: 1px solid silver;
 }
-.transactionHistory > thead {
+
+th {
   background-color: #00bcd5;
   color: white;
   text-transform: uppercase;
+}
+
+th,
+td {
+  padding: 5px 60px;
+  border: 1px solid silver;
+}
+
+tbody > tr:nth-child(even) {
+  background-color: white;
+}
+
+.type {
+  text-transform: capitalize;
+}
+.amount,
+.currency {
+  text-align: center;
 }

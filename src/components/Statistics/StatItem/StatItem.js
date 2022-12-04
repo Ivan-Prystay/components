@@ -5,7 +5,7 @@ export function StatItem({ label, percentage }) {
   return (
     <li
       className={css.item}
-      style={{ backgroundColor: `${generateRandomColor()}`, color: 'white' }}
+      style={{ backgroundColor: `${generateRandomColor()}` }}
     >
       <span className={css.label}>{label}</span>
       <span className={css.percentage}>{percentage}%</span>
@@ -13,7 +13,7 @@ export function StatItem({ label, percentage }) {
   );
 }
 
-export function generateRandomColor() {
+function generateRandomColor() {
   let r = Math.round(Math.random() * 255); //red 0 to 255
   let g = Math.round(Math.random() * 255); //green 0 to 255
   let b = Math.round(Math.random() * 255); //blue 0 to 255
